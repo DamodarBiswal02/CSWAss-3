@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function(event) {
+                event.preventDefault(); 
+                const a = $("#name").val();
+                const b = $("#email").val();
+                const c = $("#password").val(); 
+
+                if (a === "" || b === "" || c === "") {
+                    alert('Field cannot be empty');
+                } else {
+                    
+                    alert('Form submitted successfully!'); 
+                }
+            });
+        });
+    </script>
+    <style>
+        button {
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <form id="signupForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required> 
+        <button type="submit" id="btn">Sign Up</button>
+        <p class="error-message" style="color:red; display:none;"></p>
+    </form>
+</body>
+</html>
